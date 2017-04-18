@@ -81,9 +81,17 @@
       <DependentUpon>main.ts</DependentUpon>
     </Content>
     <Content Include="lib\babylon.js" />
+    <Content Include="lib\babylon.stlFileLoader.js">
+      <DependentUpon>babylon.stlFileLoader.ts</DependentUpon>
+    </Content>
+    <Content Include="lib\babylon.stlFileLoader.js.map">
+      <DependentUpon>babylon.stlFileLoader.ts</DependentUpon>
+    </Content>
+    <Content Include="models\teapot.stl" />
     <TypeScriptCompile Include="js\BabylonApp.ts" />
     <TypeScriptCompile Include="js\main.ts" />
     <Content Include="css\default.css" />
+    <TypeScriptCompile Include="lib\babylon.stlFileLoader.ts" />
     <TypeScriptCompile Include="types\babylonjs\index.d.ts" />
     <None Include="BabylonJS_TemporaryKey.pfx" />
     <TypeScriptCompile Include="types\winrt\winrtrefs.d.ts" />

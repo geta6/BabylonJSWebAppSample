@@ -29,15 +29,34 @@ class BabylonApp {
         this._light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), this._scene);
 
         // create a built-in "sphere" shape; with 16 segments and diameter of 2
-        let sphere = BABYLON.MeshBuilder.CreateSphere("sphere1",
-            { segments: 16, diameter: 2 }, this._scene);
+        /*let sphere = BABYLON.MeshBuilder.CreateSphere("sphere1",
+            { segments: 16, diameter: 2 }, this._scene);*/
 
         // move the sphere upward 1/2 of its height
-        sphere.position.y = 1;
+        //sphere.position.y = 1;
 
         // create a built-in "ground" shape
         let ground = BABYLON.MeshBuilder.CreateGround("ground1",
-            { width: 6, height: 6, subdivisions: 2 }, this._scene);
+           { width: 6, height: 6, subdivisions: 2 }, this._scene);
+
+        //let stlloader = new BABYLON.STLFileLoader();
+        //stlloader.importMesh()
+
+        BABYLON.SceneLoader.ImportMesh("", "models/", "teapot.stl", this._scene,
+            (newMeshes, particles, skeletons) => {
+                // Set the target of the camera to the first imported mesh
+                console.log("Loaded Mesh? " + newMeshes.length);
+                newMeshes[0].position = new BABYLON.Vector3(0, 1, 0);
+                newMeshes[0].scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
+                let material = new BABYLON.StandardMaterial("material01", this._scene);
+                material.diffuseColor = new BABYLON.Color3(0, 1, 1);
+                newMeshes[0].material = material;
+            },
+            null,
+            (scene, err) => {
+                console.error(err);
+            }
+        );
     }
 
     animate(): void {
