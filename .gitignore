@@ -25,8 +25,10 @@ bld/
 # Visual Studio 2015 cache/options directory
 .vs/
 # Typescript
-js/*.js
-js/*.js.map
+dial/**/*.js
+dial/**/*.js.map
+js/**/*.js
+js/**/*.js.map
 lib/babylon.stlFileLoader.js
 lib/babylon.stlFileLoader.js.map
 # Uncomment if you have tasks that create the project's static files in wwwroot

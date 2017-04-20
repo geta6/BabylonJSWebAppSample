@@ -60,6 +60,27 @@
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="dial\DialCommandSet.js">
+      <DependentUpon>DialCommandSet.ts</DependentUpon>
+    </Content>
+    <Content Include="dial\DialCommandSet.js.map">
+      <DependentUpon>DialCommandSet.ts</DependentUpon>
+    </Content>
+    <Content Include="dial\DialManager.js">
+      <DependentUpon>DialManager.ts</DependentUpon>
+    </Content>
+    <Content Include="dial\DialManager.js.map">
+      <DependentUpon>DialManager.ts</DependentUpon>
+    </Content>
+    <Content Include="dial\IDialCommand.js">
+      <DependentUpon>IDialCommand.ts</DependentUpon>
+    </Content>
+    <Content Include="dial\IDialCommand.js.map">
+      <DependentUpon>IDialCommand.ts</DependentUpon>
+    </Content>
+    <Content Include="icons\RotX.png" />
+    <Content Include="icons\RotY.png" />
+    <Content Include="icons\RotZ.png" />
     <Content Include="index.html" />
     <Content Include="images\LockScreenLogo.scale-200.png" />
     <Content Include="images\SplashScreen.scale-200.png" />
@@ -73,6 +94,30 @@
     </Content>
     <Content Include="js\BabylonApp.js.map">
       <DependentUpon>BabylonApp.ts</DependentUpon>
+    </Content>
+    <Content Include="js\dial\ZoomDialCommand.js">
+      <DependentUpon>ZoomDialCommand.ts</DependentUpon>
+    </Content>
+    <Content Include="js\dial\ZoomDialCommand.js.map">
+      <DependentUpon>ZoomDialCommand.ts</DependentUpon>
+    </Content>
+    <Content Include="js\dial\RotateZDialCommand.js">
+      <DependentUpon>RotateZDialCommand.ts</DependentUpon>
+    </Content>
+    <Content Include="js\dial\RotateZDialCommand.js.map">
+      <DependentUpon>RotateZDialCommand.ts</DependentUpon>
+    </Content>
+    <Content Include="js\dial\RotateYDialCommand.js">
+      <DependentUpon>RotateYDialCommand.ts</DependentUpon>
+    </Content>
+    <Content Include="js\dial\RotateYDialCommand.js.map">
+      <DependentUpon>RotateYDialCommand.ts</DependentUpon>
+    </Content>
+    <Content Include="js\dial\RotateXDialCommand.js">
+      <DependentUpon>RotateXDialCommand.ts</DependentUpon>
+    </Content>
+    <Content Include="js\dial\RotateXDialCommand.js.map">
+      <DependentUpon>RotateXDialCommand.ts</DependentUpon>
     </Content>
     <Content Include="js\main.js">
       <DependentUpon>main.ts</DependentUpon>
@@ -88,7 +133,14 @@
       <DependentUpon>babylon.stlFileLoader.ts</DependentUpon>
     </Content>
     <Content Include="models\teapot.stl" />
+    <TypeScriptCompile Include="dial\DialCommandSet.ts" />
+    <TypeScriptCompile Include="dial\DialManager.ts" />
+    <TypeScriptCompile Include="dial\IDialCommand.ts" />
     <TypeScriptCompile Include="js\BabylonApp.ts" />
+    <TypeScriptCompile Include="js\dial\ZoomDialCommand.ts" />
+    <TypeScriptCompile Include="js\dial\RotateZDialCommand.ts" />
+    <TypeScriptCompile Include="js\dial\RotateYDialCommand.ts" />
+    <TypeScriptCompile Include="js\dial\RotateXDialCommand.ts" />
     <TypeScriptCompile Include="js\main.ts" />
     <Content Include="css\default.css" />
     <TypeScriptCompile Include="lib\babylon.stlFileLoader.ts" />

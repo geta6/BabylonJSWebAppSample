@@ -17,7 +17,7 @@ class BabylonApp {
         this._scene = new BABYLON.Scene(this._engine);
 
         // create a FreeCamera, and set its position to (x:0, y:5, z:-10)
-        this._camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 5, -10), this._scene);
+        this._camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 6, -12), this._scene);
 
         // target the camera to scene origin
         this._camera.setTarget(BABYLON.Vector3.Zero());
@@ -51,6 +51,18 @@ class BabylonApp {
                 let material = new BABYLON.StandardMaterial("material01", this._scene);
                 material.diffuseColor = new BABYLON.Color3(0, 1, 1);
                 newMeshes[0].material = material;
+
+                // Initialize Dial Manager
+                let dcs = new DialCommandSet();
+                dcs.systemItems = [Windows.UI.Input.RadialControllerSystemMenuItemKind.volume];
+                dcs.addMode(new ZoomDialCommand(this._camera));
+                dcs.addMode(new RotateXDialCommand(newMeshes[0]));
+                dcs.addMode(new RotateYDialCommand(newMeshes[0]));
+                dcs.addMode(new RotateZDialCommand(newMeshes[0]));
+                    
+                let dm = DialManager.getInstance();
+                dm.registerContext("Default", dcs);
+                dm.setContext("Default");
             },
             null,
             (scene, err) => {
